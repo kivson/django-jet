@@ -9,9 +9,9 @@ from jet.utils import user_is_authenticated
 class UpdateDashboardModulesForm(forms.Form):
     app_label = forms.CharField(required=False)
     modules = forms.CharField()
-    modules_objects = []
 
     def __init__(self, request, *args, **kwargs):
+        self.modules_objects = []
         self.request = request
         super(UpdateDashboardModulesForm, self).__init__(*args, **kwargs)
 
